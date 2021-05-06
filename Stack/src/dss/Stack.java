@@ -20,7 +20,7 @@ public class Stack {
 
     public void pop() {
         if (array == null || array.length == 0) {
-            System.out.println("Array is empty. Can't pop");
+            System.out.println("Can't pop. Array is empty.");
         } else {
             int[] temp = new int[array.length - 1];
             for (int i = 0; i < temp.length; i++) {
