@@ -31,26 +31,41 @@ public class Stack {
     }
 
     public boolean empty() {
-        return false;
+        return array == null || array.length == 0;
     }
 
     public int peek() {
-        return 0;
+        return array == null || array.length == 0 ? 0 : array[array.length - 1];
     }
 
     public void clear() {
-
+        array = null;
     }
 
     public void print() {
-
+        if (array == null || array.length == 0) {
+            System.out.println("[]");
+        } else {
+            System.out.print("[");
+            for (int number : array) {
+                System.out.print(number + ", ");
+            }
+            System.out.println("\b\b]");
+        }
     }
 
     public boolean contains(int number) {
+        if (array != null && array.length != 0) {
+            for (int numberInArray : array) {
+                if (number == numberInArray) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
     public int size() {
-        return 0;
+        return array == null || array.length == 0 ? 0 : array.length;
     }
 }
