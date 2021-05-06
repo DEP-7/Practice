@@ -20,7 +20,7 @@ public class Queue {
 
     public void dequeue() {
         if (array == null || array.length == 0) {
-            System.out.println("Can't pop. Array is empty.");
+            System.out.println("Can't dequeue. Array is empty.");
         } else {
             int[] temp = new int[array.length - 1];
             for (int i = 0; i < temp.length; i++) {
