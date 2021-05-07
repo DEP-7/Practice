@@ -2,7 +2,7 @@ package dsq;
 
 public class Queue {
 
-    private int[] array;
+    protected int[] array;
 
     public void enqueue(int number) {
         if (array == null || array.length == 0) {
