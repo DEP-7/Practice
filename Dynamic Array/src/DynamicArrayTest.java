@@ -11,21 +11,21 @@ public class DynamicArrayTest {
         dynamicArray.add(30);
         dynamicArray.print();
 
-        dynamicArray.add(5,50);
-        dynamicArray.print();
+        //dynamicArray.add(5,50);
+        //dynamicArray.print();
         dynamicArray.add(2,25);
         dynamicArray.print();
         dynamicArray.add(0,5);
         dynamicArray.print();
-        dynamicArray.add(4,29);
+        dynamicArray.add(5,31);
         dynamicArray.print();
 
         dynamicArray.remove(2);
         dynamicArray.print();
         dynamicArray.remove(0);
         dynamicArray.print();
-        dynamicArray.remove(6);
-        dynamicArray.print();
+        //dynamicArray.remove(6);
+        //dynamicArray.print();
 
         System.out.println(dynamicArray.get(0));
         System.out.println(dynamicArray.get(1));

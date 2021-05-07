@@ -4,60 +4,54 @@ public class DynamicArray {
     protected int[] array;
 
     public void add(int number) {
-        if (array == null || array.length == 0) {
-            array = new int[1];
-            array[0] = number;
-        } else {
-            int[] temp = new int[array.length + 1];
-            for (int i = 0; i < array.length; i++) {
-                temp[i] = array[i];
-            }
-            temp[temp.length - 1] = number;
-            array = temp;
-        }
+        add(size(), number);
     }
 
     public void add(int index, int number) {
-        if (array == null || index < 0 || array.length <= index) {
-            System.out.println("Index not exist");
-        } else {
-            int[] temp = new int[array.length + 1];
-            for (int i = 0; i < index; i++) {
-                temp[i] = array[i];
-            }
-            temp[index] = number;
-            for (int i = index+1; i < temp.length; i++) {
-                temp[i] = array[i-1];
-            }
-            array = temp;
+        if (index < 0 || size() < index) {
+            throw new RuntimeException("Invalid array index");
         }
+        int[] temp = new int[size() + 1];
+        for (int i = 0; i < temp.length; i++) {
+            if (i < index) {
+                temp[i] = array[i];
+            } else if (i == index) {
+                temp[i] = number;
+            } else {
+                temp[i] = array[i - 1];
+            }
+        }
+        array = temp;
     }
 
     public void remove(int index) {
-        if (array == null || index < 0 || array.length <= index) {
-            System.out.println("Index not exist");
+        if (index < 0 || size() <= index) {
+            throw new RuntimeException("Invalid array index");
+        }
+        if (size() == 1) {
+            clear();
         } else {
-            int[] temp = new int[array.length - 1];
-            for (int i = 0; i < index; i++) {
-                temp[i] = array[i];
-            }
-            for (int i = index; i < temp.length; i++) {
-                temp[i] = array[i+1];
+            int[] temp = new int[size() - 1];
+            for (int i = 0; i < temp.length; i++) {
+                if (i < index) {
+                    temp[i] = array[i];
+                } else {
+                    temp[i] = array[i + 1];
+                }
             }
             array = temp;
         }
     }
 
     public int get(int index) {
-        if (array == null || index < 0 || array.length <= index) {
+        if (index < 0 || size() <= index) {
             throw new RuntimeException("Index not exist");
-        } else {
-            return array[index];
         }
+        return array[index];
     }
 
     public boolean empty() {
-        return array == null || array.length == 0;
+        return array == null;
     }
 
     public void clear() {
@@ -65,7 +59,7 @@ public class DynamicArray {
     }
 
     public void print() {
-        if (array == null || array.length == 0) {
+        if (array == null) {
             System.out.println("[]");
         } else {
             System.out.print("[");
@@ -77,7 +71,7 @@ public class DynamicArray {
     }
 
     public boolean contains(int number) {
-        if (array != null && array.length != 0) {
+        if (array != null) {
             for (int numberInArray : array) {
                 if (number == numberInArray) {
                     return true;
@@ -88,6 +82,6 @@ public class DynamicArray {
     }
 
     public int size() {
-        return array == null || array.length == 0 ? 0 : array.length;
+        return array == null ? 0 : array.length;
     }
 }
