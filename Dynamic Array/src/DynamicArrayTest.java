@@ -24,6 +24,13 @@ public class DynamicArrayTest {
         dynamicArray.print();
         dynamicArray.remove(0);
         dynamicArray.print();
+        dynamicArray.remove(6);
+        dynamicArray.print();
+
+        System.out.println(dynamicArray.get(0));
+        System.out.println(dynamicArray.get(1));
+        System.out.println(dynamicArray.get(2));
+        //System.out.println(dynamicArray.get(5));
 
     }
 }
