@@ -34,12 +34,15 @@ public class DynamicArray {
     }
 
     public void remove(int index) {
-        if (array == null || array.length == 0) {
-            System.out.println("Can't dequeue. Array is empty.");
+        if (array == null || index < 0 || array.length <= index) {
+            System.out.println("Index not exist");
         } else {
             int[] temp = new int[array.length - 1];
-            for (int i = 0; i < temp.length; i++) {
-                temp[i] = array[i + 1];
+            for (int i = 0; i < index; i++) {
+                temp[i] = array[i];
+            }
+            for (int i = index; i < temp.length; i++) {
+                temp[i] = array[i+1];
             }
             array = temp;
         }
