@@ -2,15 +2,7 @@ package dsdequeue;
 
 public class Queue {
 
-    private int[] array;
-
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-
-    public int[] getArray() {
-        return array;
-    }
+    protected int[] array;
 
     public void enqueue(int number) {
         if (array == null || array.length == 0) {
