@@ -2,9 +2,10 @@ package dsdequeue;
 
 public class Dequeue extends Queue {
 
-    //private int[] array;
+    private int[] array;
 
     public void enqueueRear(int number) {
+        array=getArray();
         if (array == null || array.length == 0) {
             array = new int[1];
             array[0] = number;
@@ -16,9 +17,11 @@ public class Dequeue extends Queue {
             }
             array = temp;
         }
+        setArray(array);
     }
 
     public void dequeueFront() {
+        array=getArray();
         if (array == null || array.length == 0) {
             System.out.println("Can't dequeue. Array is empty.");
         } else {
@@ -28,5 +31,6 @@ public class Dequeue extends Queue {
             }
             array = temp;
         }
+        setArray(array);
     }
 }
