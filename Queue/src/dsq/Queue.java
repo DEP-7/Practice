@@ -35,7 +35,10 @@ public class Queue {
     }
 
     public int peek() {
-        return array == null || array.length == 0 ? 0 : array[array.length - 1];
+        if (array == null || array.length == 0){
+            throw new RuntimeException("Queue is empty");
+        }
+        return array[array.length - 1];
     }
 
     public void clear() {

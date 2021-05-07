@@ -7,7 +7,7 @@ public class QueueTest {
         System.out.print("Array Items : ");
         queue.print();
         System.out.println("Array size = "+queue.size());
-        System.out.println("peek = "+queue.peek());
+        //System.out.println("peek = "+queue.peek());
         System.out.println("Is contains 10 --> "+queue.contains(10));
         System.out.println("Is empty : "+queue.empty());
         queue.dequeue();
@@ -62,7 +62,7 @@ public class QueueTest {
         System.out.print("Array Items : ");
         queue.print();
         System.out.println("Array size = "+queue.size());
-        System.out.println("peek = "+queue.peek());
+        //System.out.println("peek = "+queue.peek());
         System.out.println("Is contains 10 --> "+queue.contains(10));
         System.out.println("Is empty : "+queue.empty());
         queue.dequeue();
