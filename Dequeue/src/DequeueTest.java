@@ -53,12 +53,14 @@ public class DequeueTest {
         System.out.print("Dequeue - Array Items : ");
         deque.print();
 
-        System.out.print("Dequeue Front - Array Items : ");
+        System.out.print("Current Array Items : ");
         deque.print();
         deque.dequeueFront();
         System.out.print("Dequeue Front - Array Items : ");
         deque.print();
         deque.dequeue();
+        System.out.print("Dequeue Front - Array Items : ");
+        deque.print();
         System.out.println("------------------------- Test dequeue - end");
     }
 }
