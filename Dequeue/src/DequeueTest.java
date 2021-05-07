@@ -58,7 +58,7 @@ public class DequeueTest {
         deque.dequeueFront();
         System.out.print("Dequeue Front - Array Items : ");
         deque.print();
-        deque.dequeue();
+        deque.dequeueFront();
         System.out.print("Dequeue Front - Array Items : ");
         deque.print();
         System.out.println("------------------------- Test dequeue - end");
