@@ -2,7 +2,7 @@ package dsdequeue;
 
 public class Dequeue extends Queue {
 
-    private int[] array;
+    //private int[] array;
 
     public void enqueueRear(int number) {
         if (array == null || array.length == 0) {
